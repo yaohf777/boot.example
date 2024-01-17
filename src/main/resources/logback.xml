@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration><!-- This file has to be named as logback.xml to gain priority to lib.common.jar/logback.xml-->
+    
+	<!-- Local environment -->
+	<springProfile name="default">
+		<!-- Not to display MDC so it's easier to read log, refer to MDCInsertingServletFilter.java -->
+		<appender name="STDOUT"	class="ch.qos.logback.core.ConsoleAppender">
+			<encoder>
+				<pattern>%-5level [%thread] - [%logger] - %msg%n</pattern>
+			</encoder>
+		</appender>
+       	<root level="${LOG_ROOT_LEVEL:-INFO}">
+			<appender-ref ref="STDOUT" />
+		</root>
+        <logger name="com.sap.grc.iag.repository" level="${LOG_ROOT_LEVEL:-DEBUG}" />
+	</springProfile>
+
+
+	<!-- Non-local environment -->
+	<springProfile name="!default">
+		<!-- Define a Console Appender that creates JSON formatted log messages (suitable for Kibana) -->
+		<appender name="STDOUT-JSON" class="ch.qos.logback.core.ConsoleAppender">
+			<encoder class="com.sap.hcp.cf.logback.encoder.JsonEncoder"/>
+        </appender>
+       	<root level="${LOG_ROOT_LEVEL:-INFO}">
+			<appender-ref ref="STDOUT-JSON" />
+		</root>        
+	</springProfile>
+	
+	<logger name="com.sap.hcp.cf.logging" level="${LOG_ROOT_LEVEL:-WARN}"/>
+	<logger name="com.sap.xsa.core.instancemanager"	level="${LOG_ROOT_LEVEL:-WARN}" />
+	<logger name="com.sap.cloud.security" level="${LOG_ROOT_LEVEL:-ERROR}"/>
+	
+</configuration>

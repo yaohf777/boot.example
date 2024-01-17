@@ -1,0 +1,12 @@
+# Directories #
+/build/
+/bin/
+/target/
+/war/
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
