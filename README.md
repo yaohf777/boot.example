@@ -1,2 +1,1 @@
-# boot.example
-Spring boot example
+# Spring boot example
