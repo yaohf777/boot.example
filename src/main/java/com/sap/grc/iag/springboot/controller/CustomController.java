@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = CustomController.PATH)
 public class CustomController {
 
-	public static final String PATH = "/api/v1/custom";
+    public static final String PATH = "/api/v1/custom";
 
-	@GetMapping("/endpoint")
-	// http://localhost:8080/boot.example/api/v1/custom/endpoint
-	public String endpoint() {
+    @GetMapping("/endpoint")
+    // http://localhost:8080/boot.example/api/v1/custom/endpoint
+    public String endpoint() {
 
-	    return "endpoint";
-	}
+        return "endpoint";
+    }
 }

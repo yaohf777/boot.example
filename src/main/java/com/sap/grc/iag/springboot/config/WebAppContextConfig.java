@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan(basePackages = { "com.sap.grc.iag.springboot" })
 public class WebAppContextConfig implements WebMvcConfigurer {
-	
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
 
