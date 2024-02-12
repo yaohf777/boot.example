@@ -1,1 +1,1 @@
-# Spring boot example with SpringBootServletInitializer
+# Example based on SpringBootServletInitializer
