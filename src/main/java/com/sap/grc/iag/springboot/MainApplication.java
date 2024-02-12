@@ -11,21 +11,20 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class})
 public class MainApplication extends SpringBootServletInitializer {
 
-	// @formatter:off
-	/*
-	 * Active Spring profile set through SPRING_PROFILES_ACTIVE: ${space} in
-	 * mta.yaml Filters added and configurations performed by Spring Boot
-	 * automatically
-	 * 
-	 * Configuration: dataSource --> DataSourceConfiguration &
-	 * application.properties
-	 * 
-	 * Filters: dispatcherServlet --> ServletRegistrationBean
-	 * springSecurityFilterChain --> WebSecurityConfiguration &
-	 * SecurityFilterAutoConfiguration webRequestLoggingFilter -->
-	 * FilterRegistrationBean errorPageFilter --> FilterRegistrationBean
-	 * characterEncodingFilter --> FilterRegistrationBean
-	 *
-	 */
-	// @formatter:on
+    // @formatter:off
+    /*
+     * Active Spring profile set through SPRING_PROFILES_ACTIVE: ${space} in mta.yaml
+     * 
+     * Configuration: 
+     * dataSource                --> DataSourceConfiguration & application.properties 
+     * 
+     * Filters: 
+     * dispatcherServlet         --> ServletRegistrationBean
+     * springSecurityFilterChain --> WebSecurityConfiguration & SecurityFilterAutoConfiguration 
+     * webRequestLoggingFilter   --> FilterRegistrationBean
+     * errorPageFilter           --> FilterRegistrationBean
+     * characterEncodingFilter   --> FilterRegistrationBean
+     *
+     */
+    // @formatter:on
 }
